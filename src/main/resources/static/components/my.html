@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的</title>
+    <meta name="description" content="Conflux" />
+    <meta name="keywords" content="Conflux" />
+    <title>个人中心</title>
+    <script type="text/javascript" src="../assets/js/jquery.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../assets/css/layui.mobile.css">
+    <link rel="stylesheet" href="../assets/libs/layui/css/layui.css">
+    <script src="../assets/libs/layui/layui.js"></script>
+    <style>
+        body,html{
+            padding-bottom:10%;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        td,
+        th {
+            padding: 0;
+        }
+
+        img {
+            vertical-align: middle;
+            border: 0;
+        }
+
+        .info_wrap {
+            width: 100%;
+            height: 40vh;
+            background: #5c9afc;
+        }
+
+        .info_top {
+            display: flex;
+            padding: 5%;
+        }
+
+        .info_right {
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .info_right .state {
+            background: #ff6477;
+            border-radius: 10px;
+            width: 72px;
+            height: 22px;
+            text-align: center;
+            color: #fff;
+            line-height: 22px;
+        }
+
+        .info_top .nickname {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+        }
+
+        .info_bottom ul {
+            font-size: 14px !important;
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 16px;
+            justify-content: space-between;
+            margin-left: 10%;
+        }
+
+        .info_bottom ul li {
+            width: 44%;
+            line-height: 30px;
+        }
+
+        .assets {
+            width: 90%;
+            height: 106px;
+            margin: -12% auto 34px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 2px #e9e9e9;
+            /* transform: translateY(-62px); */
+            display: flex;
+            align-items: center;
+        }
+
+        .assets_left,
+        .assets_right {
+            color: #333333;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            text-align: center;
+            font-size: 15px;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .assets_left {
+            border-right: 1px solid #d2d2d2;
+        }
+
+        .font_2 {
+            margin-top: 4px;
+            margin-bottom: 2px;
+        }
+
+        .font_red {
+            color: #fe6479;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .jump_wrap {
+            transform: translateY(-20px);
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .jump_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            height: 50px;
+        }
+
+        a:hover {
+            color: #000 !important;
+        }
+
+        .log_out {
+            width: 46%;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 40px;
+            border: 1px solid #a0a0a0;
+            margin: 10px auto;
+            text-align: center;
+            font-size: 15px;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="info_wrap">
+    <div class="info_top">
+        <img  src="../assets/images/default_user_portrait.png"
+              id="portrait" class="avatar"/>
+
+        <div class="info_right">
+            <p class="nickname"></p>
+            <span class="state">未认证</span>
+        </div>
+    </div>
+    <div class="info_bottom">
+        <ul>
+            <li>会员级别:&nbsp;普通会员</li>
+            <li >信誉值:&nbsp;100</li>
+            <li>团队人数:&nbsp;0</li>
+            <li>活跃值:&nbsp;100</li>
+            <li>直推人数:&nbsp;0</li>
+            <li >体验通证:&nbsp;1.000</li>
+        </ul>
+    </div>
+</div>
+<div class="assets">
+    <div class="assets_left">
+        <p>总资产</p>
+        <p class="font_2">10.000</p>
+        <p class="font_red">正在交易: 0</p>
+    </div>
+    <div class="assets_right">
+        <p>可用资产</p>
+        <p class="font_2">10.000</p>
+        <p class="font_red">交易冻结: 0</p>
+    </div>
+</div>
+<div class="jump_wrap">
+    <a  class="jump_item">
+        <div class="item_left">
+            <img src="../assets/images/anquan.png" alt="" width="18px" height="22px">
+            <span onclick="toShiMing()" style="margin-left: 10px;">安全中心</span>
+        </div>
+        <span style="font-size: 20px;">></span>
+    </a>
+
+
+    <a class="jump_item">
+
+        <div class="item_left">
+            <img src="../assets/images/shiming.png" alt="" width="20px" height="20px">
+            <span onclick="location.href='shiming.html'" style="margin-left: 10px;">实名认证</span>
+        </div>
+        <span style="font-size: 20px;">></span>
+    </a>
+    <a  class="jump_item">
+        <div class="item_left">
+            <img src="../assets/images/xinwen.png" alt="" width="20px" height="20px">
+            <span onclick="toShiMing()" style="margin-left: 10px;">新闻公告</span>
+        </div>
+        <span style="font-size: 20px;">></span>
+    </a>
+    <a  class="jump_item">
+        <div class="item_left">
+            <img src="../assets/images/kefu.png" alt="" width="20px" height="22px">
+            <span onclick="toShiMing()" style="margin-left: 10px;">在线客服</span>
+        </div>
+        <span style="font-size: 20px;">></span>
+    </a>
+</div>
+
+<div class="log_out">
+    <span onclick="logout()">退出登录</span>
+</div>
+
+
+
+<script type="text/javascript">
+    var userData;
+    var setter;
+    $(function(){
+        layui.config({
+            base: '../assets/module/'
+        }).use(['layer', 'form', 'setter', 'admin'], function () {
+            setter = layui.setter;
+            debugger
+            var cache = layui.data(setter.tableName);
+            if (JSON.stringify(cache) !== "{}") {
+                userData = JSON.parse(cache.token.msg);
+                $("#userPhone").val(userData.phone);
+            } else {
+                location.href = '../index.html';
+            }
+        })
+    });
+    function toShiMing() {
+        if (userData.isRealName === 0) {
+            layer.msg("请先进行实名操作", {icon: 1, time: 2000});
+        } else {
+            layer.msg("程序员快马加鞭改bug...中", {icon: 1, time: 2000});
+        }
+    }
+    function wkf(){
+        layer.msg("尚未开放，敬请期待");
+    }
+
+    function logout() {
+        setter.removeToken();
+        location.href='../index.html';
+    }
+</script>
+
+<link rel="stylesheet" type="text/css" href="../assets/css/Common_part.css" >
+
+<style>
+
+    *{padding:0; margin:0; font-family:微软雅黑, Geneva, sans-serif}
+
+    .choice123{background-color:#fff;}
+
+    .color123{color:#fe7271;}
+
+    .black123{color:#000;}
+
+    a{text-decoration:none; color:#000000;} a:hover{text-decoration:none; color:#FF0000;}
+
+</style>
+<div frame="above"  style="position:fixed;bottom:0px;text-align:center;background-color:#fff;width:100%;border-top:1px solid #ddd;padding-top:5px; z-index:999; ">
+    <table class="choice123"  width="100%" style="font-size:0.9em;margin-top:1px;line-height:20px; " ><tr align=center>
+        <td id="tjcolour1" width="20%" onclick="location.href='shouye.html'" >
+        <img src="../assets/images/home.svg" width="26" height="26" style="padding:3px"/><br> 首页
+        </td>
+        <td id="tjcolour2" onclick="wkf()"  width="20%" onClick=""><img src="../assets/images/jiaoyi.svg" width="26" height="26"  style="padding:3px"/><br />
+            交易</td>
+        <td id="tjcolour3"  onclick="location.href='mall.html'" width="20%" onClick=""><img src="../assets/images/fuhauqi.svg" width="26" height="26"  style="padding:3px"/><br />
+            孵化器</td>
+        <td id="tjcolour4"   width="20%" onClick=""><img src="../assets/images/meFill.svg" width="26" height="26"  style="padding:3px"/><br />
+            我的</td>
+    </tr></table>
+</div>
+</body>
+</html>

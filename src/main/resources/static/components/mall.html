@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/iconfont.css">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <title>孵化器商城</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,
+        body {
+            background: #f7f4f8;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            height: 38px;
+            background: #fff;
+        }
+
+        header>span {
+            flex: 1;
+        }
+
+        header>.icon-Group- {
+            font-size: 26px !important;
+            padding: 0 5px 0 10px;
+            margin-top: 2px;
+        }
+
+        header>.icon-gengduo {
+            font-size: 26px !important;
+            padding: 0 10px
+        }
+
+        .hatch-title {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #367ff5;
+            color: #fff;
+            box-sizing: border-box;
+            padding: 0 18px;
+        }
+
+        .hatch-title>i {
+            font-size: 20px;
+        }
+
+        .hatch-img {
+            width: 100%;
+        }
+
+        .hatch-img>img {
+            width: 100%;
+        }
+
+        .hatch-tab {
+            height: 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 18%;
+            margin-bottom: 10px;
+        }
+
+        .hatch-tab>span {
+            padding: 4px 8px;
+            font-size: 14px;
+        }
+
+        .hatch-tab-active {
+            color: #367ff5;
+            border-bottom: 2px solid #367ff5;
+        }
+
+        .hatch-box {
+            padding-bottom: 49px;
+        }
+
+        .hatch-item {
+            width: 96%;
+            height: 100px;
+            margin: 0 auto 10px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+        }
+
+        .hatch-left {
+            width: 22%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #367ff5;
+        }
+
+        .hatch-left>div {
+            height: 50px;
+            width: 50px;
+            background: pink;
+            margin-bottom: 4px;
+        }
+
+        .hatch-left>div>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hatch-content {
+            height: 78%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-top: -2%;
+        }
+
+        .hatch-content>span {
+            color: #fa6e84;
+        }
+
+        .hatch-content>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .hatch-content>div>span:nth-child(1) {
+            width: 50%;
+        }
+
+        .hatch-btn {
+            height: 30px;
+            width: 58px;
+            color: #fff;
+            background: #367ff5;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .modal-content>form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-content>form>div:nth-child(1) {
+            color: #367ff5;
+            font-size: 17px;
+            margin-top: 8px;
+        }
+
+        .modal-content>form>div:nth-child(3) {
+            width: 94%;
+            margin: 15px 0;
+        }
+
+        .modal-content>form>div:nth-child(4) {
+            width: 94%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content>form>div:nth-child(4)>div {
+            margin: 5px 0 0 5px;
+        }
+
+        .modal-content>form>div:nth-child(5) {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            border-top: 2px solid #f5f5f5;
+            margin-top: 16px;
+        }
+
+        .modal-content>form>div:nth-child(5)>div:nth-child(1) {
+            flex: 1;
+            color: #367ff5;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .modal-content>form>div:nth-child(5)>div:nth-child(2) {
+            flex: 1;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            background: #367ff5;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <header style="display: none;">
+        <i class="iconfont icon-Group-"></i>
+        <span>孵化器商城</span>
+        <i class="iconfont icon-gengduo"></i>
+    </header>
+    <div class="hatch-title">
+        <i class="iconfont icon-zuojiantou"  onclick=""></i>
+        <span>孵化器商城</span>
+        <span> </span>
+    </div>
+    <div class="hatch-img"><img src="../assets/images/hatch.png" alt=""></div>
+    <div class="hatch-tab">
+        <span class="hatch-tab-active">购买孵化器</span>
+        <span onclick="toShiMing()">我的孵化器</span>
+    </div>
+    <div class="hatch-box">
+        <div class="hatch-item">
+            <div class="hatch-left">
+                <div>
+                    <img src="../assets/images/1.jpg"
+                         width="50px" height="50px" />
+                </div>
+                <span>体验孵化器</span>
+            </div>
+            <div class="hatch-content">
+                <span style="color: #3e83ff;">孵化器编号：TY20200918</span>
+                <div>
+                    <span>总产量：12.00</span>
+                    <span>日产量：0.400</span>
+                </div>
+                <div>
+                    <span>价格：0.00</span>
+                    <span>限购：0</span>
+                </div>
+            </div>
+            <div class="hatch-btn layui-btn-disabled">购买</div>
+        </div>
+        <div class="hatch-item">
+            <div class="hatch-left">
+                <div>
+                    <img src="../assets/images/2.jpg"
+                         width="50px" height="50px" />
+                </div>
+                <span>微型孵化器</span>
+            </div>
+            <div class="hatch-content">
+                <span style="color: #3e83ff;">孵化器编号：WX18192218</span>
+                <div>
+                    <span>总产量：15.00</span>
+                    <span>日产量：0.500</span>
+                </div>
+                <div>
+                    <span>价格：12.00</span>
+                    <span>限购：3</span>
+                </div>
+            </div>
+            <div class="hatch-btn" onclick="show_modal('2')">购买</div>
+        </div>
+        <div class="hatch-item">
+            <div class="hatch-left">
+                <div>
+                    <img src="../assets/images/7.jpg"
+                         width="50px" height="50px" />
+                </div>
+                <span>小型孵化器</span>
+            </div>
+            <div class="hatch-content">
+                <span style="color: #3e83ff;">孵化器编号：XX82317476</span>
+                <div>
+                    <span>总产量：130.00</span>
+                    <span>日产量：1.444</span>
+                </div>
+                <div>
+                    <span>价格：100.00</span>
+                    <span>限购：3</span>
+                </div>
+            </div>
+            <div class="hatch-btn" onclick="show_modal('7')">购买</div>
+        </div>
+        <div class="hatch-item">
+            <div class="hatch-left">
+                <div>
+                    <img src="../assets/images/8.jpg"
+                         width="50px" height="50px" />
+                </div>
+                <span>中型孵化器</span>
+            </div>
+            <div class="hatch-content">
+                <span style="color: #3e83ff;">孵化器编号：ZX82506118</span>
+                <div>
+                    <span>总产量：630.00</span>
+                    <span>日产量：3.500</span>
+                </div>
+                <div>
+                    <span>价格：500.00</span>
+                    <span>限购：99</span>
+                </div>
+            </div>
+            <div class="hatch-btn" onclick="show_modal('8')">购买</div>
+        </div>
+        <div class="hatch-item">
+            <div class="hatch-left">
+                <div>
+                    <img src="../assets/images/9.jpg"
+                         width="50px" height="50px" />
+                </div>
+                <span>大型孵化器</span>
+            </div>
+            <div class="hatch-content">
+                <span style="color: #3e83ff;">孵化器编号：DX82514503</span>
+                <div>
+                    <span>总产量：1800.00</span>
+                    <span>日产量：6.667</span>
+                </div>
+                <div>
+                    <span>价格：1000.00</span>
+                    <span>限购：99</span>
+                </div>
+            </div>
+            <div class="hatch-btn" onclick="show_modal('9')">购买</div>
+        </div>
+        <div class="hatch-item">
+            <div class="hatch-left">
+                <div>
+                    <img src="../assets/images/10.jpg"
+                         width="50px" height="50px" />
+                </div>
+                <span>超级孵化器</span>
+            </div>
+            <div class="hatch-content">
+                <span style="color: #3e83ff;">孵化器编号：CJ90720311</span>
+                <div>
+                    <span>总产量：5600.00</span>
+                    <span>日产量：15.556</span>
+                </div>
+                <div>
+                    <span>价格：2000.00</span>
+                    <span>限购：99</span>
+                </div>
+            </div>
+            <div class="hatch-btn" onclick="show_modal('10')">购买</div>
+        </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" id="popup" data-backdrop="static" role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content" style="width: 80%;margin: 30vh auto 0;overflow: hidden;">
+                <form>
+                    <div>温馨提示</div>
+                    <div>确认是否购买?</div>
+                    <div><input type="password" id="con_password" class="form-control" placeholder="请输入交易密码"></div>
+                    <div>
+                        <input type="text" id="verification" class="form-control" placeholder="请输入验证码">
+                        <div id="v_container"></div>
+                    </div>
+                    <div>
+                        <div onclick="hide_modal()">取消</div>
+                        <div class="submit" onclick="sqjs()">确认</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/gVerify.js"></script>
+<script src="../assets/libs/layui/layui.js"></script>
+<link rel="stylesheet" type="text/css" href="../assets/libs/layui/css/layui.css"/>
+<script>
+    var cp_id=0;
+    // 图像验证码
+    var verifyCode = new GVerify("v_container");
+    var layer;
+    var userData;
+    $(function(){
+        layui.config({
+            base: '../assets/module/'
+        }).use(['layer', 'form', 'setter', 'admin'], function () {
+            layer=layui.layer;
+            var setter = layui.setter;
+            var cache = layui.data(setter.tableName);
+            if (JSON.stringify(cache) !== "{}") {
+                userData = JSON.parse(cache.token.msg);
+                $("#userPhone").val(userData.phone)
+            }else {
+                location.href='../index.html';
+            }
+        })
+    });
+    function wkf(){
+        layer.msg("尚未开放，敬请期待");
+    }
+
+    function toShiMing() {
+        if (userData.isRealName === 0) {
+            layer.msg("请先进行实名操作", {icon: 1, time: 2000});
+        } else {
+            layer.msg("程序员快马加鞭改bug...中", {icon: 1, time: 2000});
+        }
+    }
+    function show_modal(cid){
+        cp_id=cid;
+        $('#popup').modal('show');
+    }
+    function hide_modal(){
+        $('#popup').modal('hide');
+        verifyCode.refresh();
+        $("#verification").val('');
+    }
+    function sqjs() //text输入长度处理
+    {
+        var con_password = $("#con_password").val();
+        var verification=$("#verification").val();
+        if (con_password == "" || con_password == null || con_password == undefined) {
+            layer.msg('请输入交易密码');
+            return;
+        } if(verifyCode.validate(verification)==false){
+        layer.msg('验证码不正确');
+        return;
+    }else {
+        $('#popup').modal('hide');
+        $("#con_password").val('');
+        $("#verification").val('');
+        verifyCode.refresh();
+
+        $.ajax({
+            url: 'https://www.pftaltd.com/index.php?app=member&act=ajax_ver_conpassword',
+            type: 'POST', //get
+            async: true, //false是否异步
+            dataType: "json", //返回的数据格式类型json/xml/html/script/jsonp/text
+            data: {
+                con_password: con_password
+            },
+            success: function(data) {
+                console.log(data);
+                if (data.done) {
+
+                    buy();
+                    console.log("成功");
+                } else {
+                    layer.msg(data.msg);
+                    console.log("失败");
+                }
+            },
+            error: function(data) {
+                console.log(data); //在前端控制台打印请求的状态
+
+            }
+
+        });
+    }
+    }
+
+    function buy () {
+        if (cp_id == "" || cp_id == null || cp_id == undefined || cp_id == 0) {
+            layer.msg('请选择产品');
+            return;
+        }
+        $.ajax({
+            url: 'https://www.pftaltd.com/index.php?app=quickcash&act=buy_kj',
+            type: 'POST', //get
+            async: true, //false是否异步
+            dataType: "json", //返回的数据格式类型json/xml/html/script/jsonp/text
+            data: {
+                cp_id: cp_id
+            },
+            success: function(data) {
+                console.log(data);
+                if (data.done) {
+                    layer.alert("购买成功");
+                    console.log("成功");
+                } else {
+                    layer.alert(data.msg);
+                    console.log("失败");
+                }
+            },
+            error: function(data) {
+                console.log(data); //在前端控制台打印请求的状态
+
+            }
+
+        });
+    }
+
+    function goback() { javascript :
+        history.back(-1);
+    }
+
+</script>
+
+
+<script type="text/javascript">
+
+    layui.use(['jquery'], function() {
+
+        var $ = layui.$
+
+
+
+
+
+
+
+
+    })
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://www.pftaltd.com/themes/mall/new/styles/wxmall/css/Common_part.css" >
+
+<style>
+
+    *{padding:0; margin:0; font-family:微软雅黑, Geneva, sans-serif}
+
+    .choice123{background-color:#fff;}
+
+    .color123{color:#fe7271;}
+
+    .black123{color:#000;}
+
+    a{text-decoration:none; color:#000000;} a:hover{text-decoration:none; color:#FF0000;}
+
+</style>
+
+<div frame="above"  style="position:fixed;bottom:0px;text-align:center;background-color:#fff;width:100%;border-top:1px solid #ddd;padding-top:5px; z-index:999; ">
+    <table class="choice123"  width="100%" style="font-size:0.9em;margin-top:1px;line-height:20px; " ><tr align=center>
+        <td id="tjcolour1" width="20%" onclick="location.href='shouye.html'" >
+            <img src="../assets/images/home.svg" width="26" height="26" style="padding:3px"/><br> 首页
+        </td>
+        <td id="tjcolour2" onclick="wkf()"  width="20%" onClick=""><img src="../assets/images/jiaoyi.svg" width="26" height="26"  style="padding:3px"/><br />
+            交易</td>
+        <td id="tjcolour3"  onclick="location.href='mall.html'" width="20%" onClick=""><img src="../assets/images/fuhauqi.svg" width="26" height="26"  style="padding:3px"/><br />
+            孵化器</td>
+        <td id="tjcolour4" onclick="location.href='my.html'"  width="20%" onClick=""><img src="../assets/images/meFill.svg" width="26" height="26"  style="padding:3px"/><br />
+            我的</td>
+    </tr></table>
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

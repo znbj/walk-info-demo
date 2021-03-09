@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0; font-family:"微软雅黑";}
+a{text-decoration:none;}
+img{border:none 0:}
+li{list-style:none;}
+
+/*top*/
+.header{width:100%; height:50px; background-color:#367ff5; color:#FFF; font-size:20px; line-height:50px; text-align:center;}
+.header a{position:absolute; left:4%; color:#FFF; font-size:16px;}
+.header a img{height:12px; width:auto; margin-right:4px;}
+
+
+/*bottom*/
+.footer{width:100%; height:50px; background-color:#fff; border-top:1px solid #c9c9c9; overflow:hidden; position: fixed; bottom:0; padding-top:10px;}
+.footer li{float:left;width:20%; text-align:center; line-height:70px;}
+.footer li a{display:block; color:#323232; font-size:14px;}
+.footer li a:hover{color:#fbaa2c;}
+.footer li.ent1{background-image:url(../images/images/zixun_03.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent1:hover{background-image:url(../images/images/zixun_03_or.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent2{background-image:url(../images/images/zhoubian_03.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent2:hover{background-image:url(../images/images/zhoubian_03_or.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent3{background-image:url(../images/images/shouye_03.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent3:hover{background-image:url(../images/images/shouye_03_or.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent4{background-image:url(../images/images/faxian_03.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent4:hover{background-image:url(../images/images/faxian_03_or.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent5{background-image:url(../images/images/huiyuan_03.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+.footer li.ent5:hover{background-image:url(../images/images/huiyuan_03_or.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+
+#ent4{background-image:url(../images/images/faxian_03_or.png); background-repeat:no-repeat; background-size: auto 20px; background-position:top center;}
+
+@media only screen and (min-width: 540px) {
+    /* For desktop: */ /* 大于540px时 */
+    .header{width:100%; height:64px; background-color:#fbaa2c; color:#FFF; font-size:28px; line-height:64px; text-align:center;}
+    .header a{position:absolute; left:4%; color:#FFF; font-size:20px;}
+    .header a img{height:16px; width:auto; margin-right:4px;}
+
+    .footer{height:60px; padding-top:20px;}
+    .footer li{line-height:76px;}
+    .footer li a{font-size:16px;}
+}

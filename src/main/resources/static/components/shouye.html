@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/libs/layui/css/layui.css">
+    <script type="text/javascript" src="../assets/libs/layui/layui.js"></script>
+
+</head>
+<script>
+    var userData;
+    var is_sign="1";
+    var is_msg="0";
+    $(function(){
+        layui.config({
+            base: '../assets/module/'
+        }).use(['layer', 'form', 'setter', 'admin'], function () {
+            var setter = layui.setter;
+
+            var cache = layui.data(setter.tableName);
+            if (JSON.stringify(cache) !== "{}") {
+                userData = JSON.parse(cache.token.msg);
+                $("#userPhone").val(userData.phone)
+            }else {
+                location.href='../index.html';
+                return;
+            }
+            $('#circleContent').carousel({
+                interval : 3000
+            });
+            //每隔3秒自动轮播
+            document.querySelector('.qiandao').addEventListener('click', function() {
+                // sign();
+                layer.msg('签到成功', {offset: ['100px']})
+            })
+        })
+
+        if (is_sign=="0") {
+            $(".qiandao").css("color","#fff");
+        }
+        if (is_msg=="1") {
+            $(".msg").css("color","red");
+        }
+    });
+    function wkf(){
+        layer.msg("尚未开放，敬请期待");
+    }
+    function toShiMing() {
+        if (userData.isRealName === 0) {
+            layer.msg("请先进行实名操作", {icon: 1, time: 2000});
+        } else {
+            layer.msg("程序员快马加鞭改bug...中", {icon: 1, time: 2000});
+        }
+    }
+</script>
+<style>
+    table {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    html {
+        font-family: sans-serif;
+    }
+    html, body, header, section, footer, div, ul, ol, li, img, a, span, em, del, legend, center, strong, var, fieldset, form, label, dl, dt, dd, cite, input, hr, time, mark, code, figcaption, figure, textarea, h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-style: normal;
+    }
+    html, body {
+        -webkit-touch-callout: none;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-select: none;
+        background-color: #fff;
+        overflow-x: hidden;
+        word-wrap: normal;
+    }
+    .top_box {
+        width: 100%;
+        height: 190px;
+        background: url('../assets/images/bg_title.png') no-repeat;
+        background-size: 100% 100%;
+        font-size: 24px;
+        color: #fff;
+    }
+    .top_box .user_info {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 25px;
+        padding-top:10px;
+    }
+    .qiandao {
+        /* background: url('https://www.pftaltd.com/themes/mall/new/styles/default/images/qiandao.svg'); */
+        background-size: 100% 100%;
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 14px;
+        color: red;
+    }
+
+    .msg {
+        /* background: url('https://www.pftaltd.com/themes/mall/new/styles/default/images/msg.svg'); */
+        background-size: 100% 100%;
+        display: inline-block;
+        font-size: 14px;
+        color: #fff;
+    }
+    .container {
+        width: 100%;
+        height: calc(100% - 100px);
+        padding: 8px 16px 15px 16px;
+        background: #f5f5f5;
+        border-radius: 10px 10px 0 0;
+        position: absolute;
+        top:10%;
+    }
+    .carousel-inner {
+        border-radius: 4px;
+        width: 104%;
+        margin-left: -2%;
+    }
+    .col-xs-3 {
+        font-size: 13px;
+    }
+    /* .layui-layer.layui-layer-msg {
+     width: 90% !important;
+     font-size: 28px !important;
+     }
+     .layui-layer-dialog .layui-layer-content {
+     font-size: 28px !important;
+     }
+     .layui-layer-hui .layui-layer-content {
+     padding: 15px 12.5px;
+     }
+     */
+    .dd_box{
+        position:relative;
+        top:-20%
+
+    }
+</style>
+<body>
+<div class="top_box">
+    <div class="user_info">
+        <div class="user_name"><span id="userPhone"></span></div>
+        <div class="info_wrap_right">
+            <span class="qiandao" id="sign">签到</span>
+            <span onclick="toShiMing()" class="msg" id="is_msg">消息</span>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id="circleContent" class="carousel slide row" style="padding: 0px;margin: 0px">
+        <ol class="carousel-indicators" style="display: none;">
+        </ol>
+        <div class="carousel-inner ">
+            <div class="item active">
+                <img src="../assets/images/202009301548408425.png" class="img-responsive" />
+                <div class="carousel-caption"></div>
+            </div>
+            <div class="item ">
+                <img src="../assets/images/202009301548443743.png" class="img-responsive" />
+                <div class="carousel-caption"></div>
+            </div>
+        </div>
+        <!-- <a class="carousel-control left" href="#circleContent" data-slide="prevent" ></a>  -->
+        <!-- <a class="carousel-control right" href="#circleContent" data-slide="next"></a></div> -->
+        <div class="row" style="height: 10px;background-color: #f2f2f2"></div>
+        <div onclick="" class="row"
+             style="padding: 1px 0; border-radius: 6px;background: #fff;box-sizing: border-box;margin:0 -8px;margin-bottom: 26px;">
+            <div class="col-xs-2" style="text-align: center;padding:0px;padding-top: 1%;padding-right: 5%;"><img
+                    src="../assets/images/tz.png" width="20px" height="20px">
+            </div>
+            <div class="col-xs-10" style="padding-left: 0px;padding-top: 0.25%;font-size: 1.5em">
+                <marquee direction="left" scrollamount="2" style="font-size:0.5em;">
+                    <span style="text-decoration:underline; "></span>关于孵化器减产调整（2021年03月07日）						</marquee>
+            </div>
+        </div>
+        <!-- 	 <div class="row" style="height: 20px;background-color: #f2f2f2"></div> -->
+        <div class="row" style="text-align: center;font-size: 2.5em;margin-top: 2%; font-size: 16px;">
+            <div class="col-xs-3" onclick=""><img
+                    src="../assets/images/zhangdan.png" width="30px" height="30px" />
+                <br>
+                <span onclick="toShiMing()" style="margin-top: 20px">个人账单</span>
+            </div>
+            <div class="col-xs-3" onclick="toShiMing()"><img
+                    src="../assets/images/information.png" width="30px"
+                    height="30px" />
+                <br>
+                玩家信息
+            </div>
+            <div class="col-xs-3" onclick="toShiMing()"><img
+                    src="../assets/images/team.png" width="30px" height="30px"
+                    style="transform: scale(1.2);" />
+                <br>
+                我的团队
+            </div>
+            <div class="col-xs-3" onclick="toShiMing()"><img
+                    src="../assets/images/zhaomu.png" width="30px" height="30px" />
+                <br>
+                推广招募
+            </div>
+        </div>
+        <div class="row" style="text-align: center;font-size: 2.5em;margin-top: 6%; font-size: 16px;">
+            <div class="col-xs-3" onclick="toShiMing()" ><img
+                    src="../assets/images/shangcheng.png" width="30px"
+                    height="30px" />
+                <br>
+                <span style="margin-top: 20px">商城</span>
+            </div>
+            <div onclick="toShiMing()" class="col-xs-3"><img src="../assets/images/bangfu.png" width="30px"
+                                                       height="30px" style="transform: scale(0.8);" />
+                <br>
+                帮扶通道
+            </div>
+            <div onclick="toShiMing()" class="col-xs-3"><img src="../assets/images/gongyi.png" width="30px"
+                                                       height="30px" />
+                <br>
+                我的公益
+            </div>
+            <div onclick="toShiMing()" class="col-xs-3"><img src="../assets/images/xuesheng.png" width="30px"
+                                                       height="30px" />
+                <br>
+                老年大学
+            </div>
+        </div>
+        <div class="row" style="text-align: center;font-size: 2.5em;margin-top: 6%; font-size: 16px;">
+            <div class="col-xs-3" onclick=""><img
+                    src="../assets/images/book.png" width="30px" height="30px" />
+                <br>
+                <span
+                        style="margin-top: 20px">白皮书</span>
+            </div>
+            <div class="col-xs-3" onclick="toShiMing()"><img
+                    src="../assets/images/services.png" width="30px" height="30px" />
+                <br>
+                在线客服
+            </div>
+            <div class="col-xs-3" onclick="toShiMing()"><img
+                    src="../assets/images/Rule.png" width="30px" height="30px" />
+                <br>
+                平台规则
+            </div>
+            <div onclick="toShiMing()" class="col-xs-3" ><img
+                    src="../assets/images/game.png" width="30px" height="30px" />
+                <br>
+                娱乐中心
+            </div>
+        </div>
+        <!-- <div class="advertisement"> -->
+        <!-- </div> -->
+    </div>
+    <img src="../assets/images/jiaonang.png" width="100%" alt="" style="border-radius: 7px;margin-top: 25px; margin-bottom: 25%;">
+</div>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="../assets/css/Common_part.css" >
+
+<style>
+
+    *{padding:0; margin:0; font-family:微软雅黑, Geneva, sans-serif}
+
+    .choice123{background-color:#fff;}
+
+    .color123{color:#fe7271;}
+
+    .black123{color:#000;}
+
+    a{text-decoration:none; color:#000000;} a:hover{text-decoration:none; color:#FF0000;}
+
+</style>
+
+<div frame="above"  style="position:fixed;bottom:0px;text-align:center;background-color:#fff;width:100%;border-top:1px solid #ddd;padding-top:5px; z-index:999; ">
+    <table class="choice123"  width="100%" style="font-size:0.9em;margin-top:1px;line-height:20px; " ><tr align=center>
+        <td id="tjcolour1" width="20%" >
+            <img src="../assets/images/home.svg" width="26" height="26" style="padding:3px"/><br> 首页
+        </td>
+        <td id="tjcolour2" onclick="wkf()"  width="20%" onClick=""><img src="../assets/images/jiaoyi.svg" width="26" height="26"  style="padding:3px"/><br />
+            交易</td>
+        <td id="tjcolour3"  onclick="location.href='mall.html'" width="20%" onClick=""><img src="../assets/images/fuhauqi.svg" width="26" height="26"  style="padding:3px"/><br />
+            孵化器</td>
+        <td id="tjcolour4" onclick="location.href='my.html'"  width="20%" onClick=""><img src="../assets/images/meFill.svg" width="26" height="26"  style="padding:3px"/><br />
+            我的</td>
+    </tr></table>
+</div>
+</body>
+</html>

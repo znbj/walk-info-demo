@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>会员信息-修改身份证 - conflux</title>
+    <meta name="description" content="conflux"/>
+    <meta name="keywords" content="conflux"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../assets/css/iconfont.css">
+    <script type="text/javascript" src="../assets/js/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="../javascript/resgin.js"></script>
+    <link rel="stylesheet" href="../assets/libs/layui/css/layui.css">
+    <script src="../assets/libs/layui/layui.js"></script>
+    <!--    Viewer一款强大的图片查看器-->
+    <link rel="stylesheet" href="../../assets/module/viewer/dist/viewer.css">
+    <script src="../../assets/module/viewer/dist/viewer.js"></script>
+    <style type="text/css">
+        .wrap {
+            height: 130px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+        .b{
+            width: 200px;
+            height: 100px;
+        }
+
+
+
+        .hatch-title {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #367ff5;
+            color: #fff;
+            box-sizing: border-box;
+            padding: 0 18px;
+            font-style: 13px;
+        }
+
+
+        .hatch-title > i {
+            font-size: 20px;
+        }
+        .hatch-detailed {
+            font-size: 12px;
+        }
+        .name-title {
+            height: 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .name-title > span {
+            line-height: 14px;
+            padding: 0 10px;
+            border-left: 2px solid #367ff5;
+            margin-left: 16px;
+            font-size: 14px;
+        }
+        .name-box > div {
+            height: 46px;
+            width: 96%;
+            margin: 0 auto 10px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            box-sizing: border-box;
+            padding: 0 8px;
+            border-radius: 4px;
+        }
+
+        .name-box > div > input {
+            flex: 1;
+            border: 0;
+            outline: none;
+            text-align: right;
+        }
+        .name-box > div > input::placeholder {
+            color: #ccc;
+        }
+        .name-box > div > div, .name-box > div > span:nth-child(2) {
+            color: #ccc;
+        }
+        .name-code {
+            width: 96%;
+            margin: 0 auto 20px;
+            background: #fff;
+            box-sizing: border-box;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+        .name-code > div:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            border: 1px dashed #999;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .name-code > div:nth-child(2) > i {
+            font-size: 22px;
+        }
+
+        .name-btn {
+            width: 90%;
+            height: 40px;
+            margin: 0 auto;
+            border-radius: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            background: #367ff5;
+        }
+
+        .dd_box2 {
+            border-radius: 5px;
+            background-color: #fff;
+            margin-top: 10px;
+            padding: 30px 0px;
+        }
+
+        .image_1 {
+            width: 10%;
+            margin-left: 45%;
+            margin-top: 10px;
+        }
+        .image_3 {
+            width: 20%;
+            margin-left: 45%;
+            margin-top: 10px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            height: 38px;
+            background: #fff;
+        }
+        header > span {
+            flex: 1;
+        }
+        header > .icon-Group- {
+            font-size: 26px !important;
+            padding: 0 5px 0 10px;
+            margin-top: 2px;
+        }
+        header > .icon-gengduo {
+            font-size: 26px !important;
+            padding: 0 10px
+        }
+        .hatch-title {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #367ff5;
+            color: #fff;
+            box-sizing: border-box;
+            padding: 0 18px;
+        }
+        .hatch-title > i {
+            font-size: 20px;
+        }
+        .new-name {
+            width: 96%;
+            height: 50px;
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+        }
+        .new-name > span {
+            font-size: 14px;
+            margin: 0 10px;
+        }
+        .grad {
+            line-height: 30px;
+        }
+        .td {
+            height: 35px;
+        }
+        .p {
+            padding: 0px
+        }
+        input {
+            outline: medium;
+        }
+        input[type=radio] {
+            -webkit-transform: scale(1.6, 1.6);
+            -moz-transform: scale(1.6, 1.6);
+            -o-transform: scale(1.6, 1.6);
+        }
+        a {
+            text-decoration: none;
+        }
+        /*按钮*/
+        .lan {
+            background: #5c9afc;
+            background: linear-gradient(to bottom, #5c9afc, #5c9afc);
+            background: -moz-linear-gradient(top, #5c9afc, #5c9afc);
+            background: -webkit-gradient(linear, 0 0, 0 100%, from(#5c9afc), to(#5c9afc));
+            border: none;
+            color: #fff;
+            width: 90%;
+            line-height: 40px;
+            border-radius: 5px;
+            /*border-radius: 30px;*/
+            font-size: 15px;
+        }
+        .apDiv1 {
+            position: absolute;
+            width: 38px;
+            height: 26px;
+            z-index: 1;
+            left: 1px;
+            top: 15px;
+        }
+        .apDiv2 {
+            position: absolute;
+            width: 65px;
+            z-index: 2;
+            right: 0px;
+            top: 0;
+            text-align: right;
+            font-size: 1em;
+            padding: 12px 0;
+            color: #fff;
+        }
+        .image_2 {
+            width: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        var layer;
+        var userData;
+        var setter;
+        var upload;
+
+
+        $(function () {
+            layui.config({
+                base: '../assets/module/'
+            }).use(['layer', 'form', 'setter', 'admin','upload'], function () {
+                layer = layui.layer;
+                setter = layui.setter;
+                upload = layui.upload;
+                var form=layui.form;
+
+                var cache = layui.data(setter.tableName);
+                if (JSON.stringify(cache) !== "{}") {
+                    userData = JSON.parse(cache.token.msg);
+                    $("#userId").val(userData.userId)
+                } else {
+                    location.href = '../index.html';
+                }
+                form.on('submit(exportInfoEditFormSummit)', function (data) {
+                    var loadIndex = layer.msg('保存中', {icon: 16, shade: 0.01, time: false});
+                    console.log(data);
+                    $.ajax({
+                        url: setter.baseServer + '/updateNameInfo',
+                        data: data.field,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (res) {
+                            layer.close(loadIndex);
+                            if (0 === res.code) {
+                                layer.msg("保存成功,请等待管理员审核!", {icon: 1, time: 1000}, function () {
+                                    location.href='/components/shouye.html';
+                                });
+                            } else {
+                                layer.msg(res.msg || '保存失败', {icon: 5});
+                            }
+                        },
+                        error: function (xhr) {
+                            layer.close(loadIndex);
+                            layer.msg('系统出错了~', {icon: 5});
+                        }
+                    });
+                });
+            })
+        });
+
+        function countDown() {
+            var i = 60;
+            $(".Captcha").val(i + "s");
+            $(".Captcha").css({
+                "color": "#ccc"
+            });
+            var _timer = setInterval(function () {
+                if (i > 0) {
+                    i--;
+                    $(".Captcha").val(i + "s");
+                } else {
+                    clearInterval(_timer);
+                    $(".Captcha").val("重新获取");
+                    $(".Captcha").removeAttr("disabled");
+                    $(".Captcha").css({
+                        "color": "#666"
+                    });
+                }
+            }, 1000)
+        }
+
+
+        // function yanzheng() {
+        //     var nc = $("#nc").val();
+        //     var real_name2 = $("#real_name2").val().trim();
+        //     var id_card = $("#id_card").val().trim();
+        //     if (real_name2 == '') {
+        //         layer.msg("请输入姓名！");
+        //         return false;
+        //     }
+        //     if (id_card == '') {
+        //         layer.msg("请输入身份证号！");
+        //         return false;
+        //     }
+        //     var ele = id_card;
+        //     var birth = ele.substring(6, 10) + "-" + ele.substring(10, 12) + "-" + ele.substring(12, 14);
+        //     console.log(birth);
+        //     var sex = "";
+        //     if (parseInt(ele.substr(16, 1)) % 2 == 1) {
+        //         sex = "男";
+        //     } else {
+        //         sex = "女";
+        //     }
+        //     console.log(sex);
+        //     //获取年龄
+        //     var myDate = new Date();
+        //     var month = myDate.getMonth() + 1;
+        //     var day = myDate.getDate();
+        //     var age = myDate.getFullYear() - ele.substring(6, 10) - 1;
+        //     if (ele.substring(10, 12) < month || ele.substring(10, 12) == month && ele.substring(12, 14) <= day) {
+        //         age++;
+        //     }
+        //     console.log(age);
+        //     if (age < 18 || age > 70) {
+        //         layer.msg("您的年龄不符合要求！");
+        //         return false;
+        //     }
+        //     if (img_src == "" || img_src == null || img_src == undefined) {
+        //         layer.msg("请上传身份证正面！");
+        //         return false;
+        //     }
+        //     if (img_src2 == "" || img_src2 == null || img_src2 == undefined) {
+        //         layer.msg("请上传身份证反面！");
+        //         return false;
+        //     }
+        //     layer.msg('识别处理中，请耐心等待结果！');
+        //     layer.load();
+        //     document.form1.submit();
+        //     return true;
+        // }
+
+        // $("#code").click(function () {
+        //     var code_num = $("#telphone").val();
+        //     var telephone = $("#telphone").val();
+        //     if (telephone == "" || telephone == null || telephone == undefined) {
+        //         //		/MyToast('请输入手机号码');
+        //         alert('请输入手机号码');
+        //         return;
+        //     } else if (!(/^1[3456789]\d{9}$/.test(telephone))) {
+        //         //MyToast('手机号格式错误');
+        //         alert('手机号格式错误');
+        //         return;
+        //     } else {
+        //         $("#code").attr("disabled", true);
+        //         console.log(code_num);
+        //         $.ajax({
+        //             url: '',
+        //             type: 'POST', //get
+        //             async: true, //false是否异步
+        //             dataType: "json", //返回的数据格式类型json/xml/html/script/jsonp/text
+        //             data: {
+        //                 telphone: telephone
+        //             },
+        //             success: function (data) {
+        //                 if (data.done) {
+        //                     console.log("发送成功");
+        //                     countDown();
+        //                 } else {
+        //                     $(".Captcha").removeAttr("disabled");
+        //                     console.log("发送失败");
+        //                 }
+        //             },
+        //             error: function (data) {
+        //                 console.log(data);
+        //                 //在前端控制台打印请求的状态
+        //             }
+        //         });
+        //     }
+        // });
+        function canvasDataURL(file, callback) { //压缩转化为base64
+            var reader = new FileReader()
+            reader.readAsDataURL(file)
+            reader.onload = function (e) {
+                const img = new Image()
+                const quality = 0.75 // 图像质量
+                const canvas = document.createElement('canvas')
+                const drawer = canvas.getContext('2d')
+                img.src = this.result
+                img.onload = function () {
+                    canvas.width = img.width / 3
+                    canvas.height = img.height / 3
+                    drawer.drawImage(img, 0, 0, canvas.width, canvas.height)
+                    convertBase64UrlToBlob(canvas.toDataURL(file.type, quality), callback);
+                }
+            }
+        }
+        function convertBase64UrlToBlob(urlData, callback) { //将base64转化为文件格式
+            const arr = urlData.split(',')
+            const mime = arr[0].match(/:(.*?);/)[1]
+            const bstr = atob(arr[1])
+            let n = bstr.length
+            const u8arr = new Uint8Array(n)
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n)
+            }
+            callback(new Blob([u8arr], {
+                type: mime
+            }));
+        }
+
+        var img_src = "";
+        var img_src2 = "";
+        layui.config({
+            base: '../assets/module/'
+        }).use(['setter','upload'], function () {
+
+            var setter = layui.setter;
+            var upload = layui.upload;
+            upload.render({
+                elem: '#img-change',
+                url: setter.base_server+"/file/upload",
+                before: function (obj) {
+                    layer.msg('正在上传，请耐心等待~！');
+                    layer.load();
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function (index, file, result) {
+                        $("#img-change").attr("src", result); //图片链接（base64）
+                    });
+                },
+                method: 'post', //可选项。HTTP类型，默认post
+                // data: {
+                //     ECM_ID: "",
+                //     HTTP_USER_AGENT: "",
+                //     ajax: 1,
+                //     pathname: 'zhengmian'
+                // },
+                field: 'file',
+                size: 5120,
+                multiple: false,
+                number: 1,
+                accept: 'images', //只允许上传图片
+                acceptMime: 'image/*', //只筛选图片
+                //bindAction: '#qd', //指向一个按钮触发上传
+                auto: false, //选择文件后不自动上传
+                choose: function (obj) {
+                    var files = obj.pushFile();
+                    var filesArry = [];
+                    for (var key in files) { //将上传的文件转为数组形式
+                        filesArry.push(files[key])
+                    }
+                    var index = filesArry.length - 1;
+                    var file = filesArry[index]; //获取最后选择的图片,即处理多选情况
+
+                    if (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[1]
+                        .replace(/[ ]/g, "").replace("MSIE", "")) < 9) {
+                        return obj.upload(index, file)
+                    }
+                    console.log(file.size);
+                    if (file.size / 1024 / 1024 < 2) {
+                        return obj.upload(index, file);
+                    }
+                    canvasDataURL(file, function (blob) {
+                        var aafile = new File([blob], file.name, {
+                            type: file.type
+                        })
+                        var isLt1M;
+                        if (file.size < aafile.size) {
+                            isLt1M = file.size
+                        } else {
+                            isLt1M = aafile.size
+                        }
+                        console.log(aafile.size);
+                        if (isLt1M / 1024 / 1024 > 2) {
+                            return layer.alert('图片压缩之后还是大于2M，请重新上传！');
+                        } else {
+                            if (file.size < aafile.size) {
+                                return obj.upload(index, file)
+                            }
+                            obj.upload(index, aafile)
+                        }
+                    })
+                },
+                done: function (res) {
+                    layer.closeAll('loading'); //关闭loading
+                    console.log(res);
+                    code = res.code;
+                    // layer.close(layer.msg()); //关闭上传提示窗口
+                    if (res.code !== 0) {
+                        return layer.msg('上传出错，文件过大，网络环境较差或者服务器繁忙，请稍后再试！');
+                    }
+                    img_src = res.location;
+                    $("#imageUrl").val(img_src)
+                    $("#img-change").attr("src", res.location); //图片链接（base64）
+
+                },
+                error: function (err) {
+                    layer.msg("网络环境较差或者服务器繁忙，请稍后再试！")
+                    layer.closeAll('loading'); //关闭loading
+                    console.log(err);
+                }
+            })
+        })
+
+
+        layui.config({
+            base: '../assets/module/'
+        }).use(['setter','upload'], function () {
+            var upload = layui.upload;
+            var setter = layui.setter;
+            upload.render({
+                elem: '#img-change-fm',
+                url: setter.base_server+"/file/upload",
+                before: function (obj) {
+                    layer.msg('正在上传，请耐心等待~！');
+                    layer.load();
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function (index, file, result) {
+                        $("#img-change-fm").attr("src", result); //图片链接（base64）
+                    });
+                },
+                method: 'post', //可选项。HTTP类型，默认post
+                // data: {
+                //     ECM_ID: "",
+                //     HTTP_USER_AGENT: "",
+                //     ajax: 1,
+                //     pathname: 'fanmian'
+                // },
+                field: 'file',
+                size: 5120,
+                multiple: false,
+                number: 1,
+                accept: 'images', //只允许上传图片
+                acceptMime: 'image/*', //只筛选图片
+                //bindAction: '#qd', //指向一个按钮触发上传
+                //	auto: false, //选择文件后不自动上传
+                done: function (res) {
+                    layer.closeAll('loading'); //关闭loading
+                    console.log(res);
+                    code = res.code;
+                    // layer.close(layer.msg()); //关闭上传提示窗口
+                    if (res.code !== 0) {
+                        return layer.msg('上传出错，文件过大，网络环境较差或者服务器繁忙，请稍后再试！');
+                    }
+                    img_src2 = res.location;
+                    $("#IDImageUrl").val(img_src2)
+                    $("#img-change-fm").attr("src", res.location); //图片链接（base64）
+                },
+                error: function (err) {
+                    layer.msg("网络环境较差或者服务器繁忙，请稍后再试！")
+                    layer.closeAll('loading'); //关闭loading
+                    console.log(err);
+                }
+            })
+
+
+
+        })
+    </script>
+</head>
+
+<body style="margin:auto; background-color:#f6f6f6; color:#333">
+
+<form id="m_form" lay-filter="commitPersonInfo"  class="zcform layui-form">
+    <div style="width:100%; background-color:#367ff5; padding:10px 0;font-size:1.2em; text-align:center;color:#fff;border-bottom:1px #e4e4e4 solid;">
+        实名认证
+    </div>
+    <div class="apDiv1" onclick="location.href='my.html'">
+        <img src="../assets/images/he_18.png" width="20" height="20"/>
+    </div>
+    <div class="name-title">
+        <span>实名认证信息</span>
+    </div>
+    <input id="userId"  type="hidden" name="userId">
+    <div class="name-box">
+        <div>
+            <span>姓名</span>
+            <input type="text" placeholder="请填写姓名" name="trueName" lay-verType="tips" lay-verify="required">
+            <br/>
+        </div>
+        <!--        <div>-->
+        <!--            <span>证件号</span>-->
+        <!--            <input type="text" placeholder="请填写身份证号码" name="id_card" id="id_card">-->
+        <!--            <br/>-->
+        <!--        </div>-->
+    </div>
+    <div class="dd_box2">
+        <div>
+            <img id="img-change" src="../assets/images/upload.png" class="image_1"></img>
+        </div>
+        <div style="font-size:12px;color:#699ef8;text-align: center;margin-top:10px;">
+            上传手持照片
+        </div>
+        <input class="layui-upload-file" type="file" multiple>
+        <input id="imageUrl" type="hidden" name="imageUrl" lay-verType="tips" lay-verify="required">
+    </div>
+    <div class="dd_box2">
+        <div>
+            <img id="img-change-fm" src="../assets/images/upload.png" class="image_1"></img>
+        </div>
+        <div style="font-size:12px;color:#699ef8;text-align: center;margin-top:10px;">
+            上传身份证正面
+        </div>
+        <input  class="layui-upload-file" type="file" multiple>
+        <input id="IDImageUrl" type="hidden" name="idImageUrl" lay-verType="tips" lay-verify="required" >
+    </div>
+    <span class="layui-btn layui-btn-sm layui-btn-danger">示例图片</span>
+    <div class="wrap">
+                <img  src="../assets/images/example1.jpg" class="b"></img>
+                <img src="../assets/images/example2.jpg" class="b"></img>
+    </div>
+<!--    <div class="dd_box2">-->
+<!--        <div>-->
+<!--            <img src="../assets/images/example2.jpg" class="image_3"></img>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <table width="100%" border="0" style="position: fixed; bottom: 50px;">-->
+<!--        <tr>-->
+<!--            <td align="center">-->
+<!--                <input type="submit" name="tj" id="tj" value="提交" class="lan"/>-->
+<!--            </td>-->
+<!--            &lt;!&ndash;<td class="p">&nbsp;</td>&ndash;&gt;-->
+<!--            <td align="left" style="display: none">-->
+<!--                <input type="button" name="返回" id="返回" value="　返回　" class="lan"/>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+    <div class="model-form-footer" align="center">
+        <button class="lan" type="button" lay-filter="exportInfoEditFormSummit"  lay-submit>提交</button>
+<!--        <button class="layui-btn layui-btn-primary" type="button" lay-filter="" ew-event="closeDialog">取消</button>-->
+    </div>
+</form>
+
+
+</body>
+</html>
